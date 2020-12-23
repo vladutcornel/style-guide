@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Cornel’s Style Guide | There’s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense.</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Cornel’s Style Guide" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="There’s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense." />
+<meta property="og:description" content="There’s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense." />
+<link rel="canonical" href="/" />
+<meta property="og:url" content="/" />
+<meta property="og:site_name" content="Cornel’s Style Guide" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Cornel’s Style Guide" />
+<script type="application/ld+json">
+{"@type":"WebSite","url":"/","headline":"Cornel’s Style Guide","description":"There’s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense.","name":"Cornel’s Style Guide","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Cornel's Style Guide" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Cornel&#39;s Style Guide</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">Who dis? (About)</a><a class="page-link" href="/guides/git.html">Git guidelines</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home"><div class="page-content">
+        <p>After 15 years working with different coding and programming languages, and following different coding style guidelines,
+I have developed my own style, that may contradict or complement other guidelines you may have read. 
+<a href="/about">More about me here</a></p>
+
+<h1 id="general-rules">General rules</h1>
+
+<p>Use these regardless of the language or framework.</p>
+
+<h2 id="1-dont-always-follow-this-guide">1. Don’t always follow this guide</h2>
+<p>If you are joining an existing project and team, chances are there are already style guides that your team follows.
+Ask your Team Leader about them. Only if there aren’t any, or you feel comfortable in suggesting changes, 
+ask them if they are willing to follow this guide.</p>
+
+<p>Even with new projects, there may be official guidelines for the language or frameworks you will be using. Try to follow those as much as it makes sense.</p>
+
+<h2 id="2-code-for-fellow-developers">2. Code for fellow developers</h2>
+<p>The code you write will <strong>always</strong> be read by someone else. People change over time, so that someone else may be you from the future.</p>
+
+<p>Give that someone else as few reasons to cuss you as possible.</p>
+
+<p>The fact you are reading a style guide is a step in the right direction.</p>
+
+<h2 id="3-general-programming">3. General programming</h2>
+<p>Try to avoid constructs that are specific to other languages, unless there is a very good reason to do it.</p>
+
+<h2 id="4-code-comments">4. Code Comments</h2>
+<p>I still think comments are important in code.</p>
+
+<p>I heard the argument that code should speak for itself, thus comments aren’t needed. The reasoning is fair, in my opinion, but I disagree with the conclusion. There needs to be a middle ground between providing too much information and none at all.</p>
+
+<p>Here are my suggestions:</p>
+
+<ol>
+  <li><strong>Comment at the beginning of the file</strong><br />
+If the file represents a single class, function, module, or component, provide some usage examples.<br />
+If not, give some details on what the file does.</li>
+  <li><strong>Doc-Comment before each class or function</strong><br />
+Doc-Comments are a special kind of comment, first introduced for Java (<a href="https://en.wikipedia.org/wiki/Javadoc">Javadoc</a>) for generating API documentation. They were adopted by other languages.<br />
+Even if you don’t have an API Generator running, some IDEs use it to provide nice auto-complete.</li>
+  <li><strong>Describe the algorithm inside a longer block of code</strong><br />
+Instead of writing a comment before each line (which qualifies as too much information), describe the algorithm before you implement it. Remember to change the description when you update the algorithm.</li>
+</ol>
+
+<h2 id="5-use-git">5. Use Git</h2>
+<p>There is no competition anymore. Git is now the industry standard for code versioning.</p>
+
+<p>Look at <a href="/guides/git">Cornel’s Git Style Guide</a>.</p>
+
+<h2 id="6-common-debates">6. Common debates</h2>
+
+<p>Here are some common codding debates, and how I settle them:</p>
+
+<h3 id="tabs-vs-spaces">Tabs vs. Spaces</h3>
+<p><strong>Answer</strong>: Spaces inserted with the TAB key.</p>
+
+<p>Most serious code editors do this already: You just press the TAB key, and they insert 4 spaces (or how many you define, but it should be 4)</p>
+
+<h3 id="indentation">Indentation</h3>
+<p><strong>Answer</strong>: 4 spaces.</p>
+
+<p>Having only 2 spaces is too flat for me. More than 4 is too much.
+The only case where I would use 2 spaces is in an YAML file, when defining arrays.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">parent</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">line1</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Note</span><span class="nv"> </span><span class="s">only</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">spaces</span><span class="nv"> </span><span class="s">before</span><span class="nv"> </span><span class="s">-"</span>
+    <span class="na">line2</span><span class="pi">:</span> <span class="s2">"</span><span class="s">BTW,</span><span class="nv"> </span><span class="s">This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">object</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">array"</span>
+    <span class="na">line3</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Now</span><span class="nv"> </span><span class="s">we</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">4</span><span class="nv"> </span><span class="s">spaces</span><span class="nv"> </span><span class="s">because</span><span class="nv"> </span><span class="s">we</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">object"</span>
+  <span class="pi">-</span> <span class="s">This is a string</span>
+</code></pre></div></div>
+
+<h3 id="first-brace">First brace</h3>
+<p>Should the first brace be on the same line, or the next line?</p>
+
+<p>Chances are the community for the programming language already decided this, so you should follow it.</p>
+
+<p>Generally, I prefer to have it on the same line because when I have the text cursor on the last brace , my IDEs show a dotted line straight into the statement it belongs to. Having the first brace on a separate line just means I would have to look one line up, which is not a huge inconvenience.<br />
+I allow my IDE to refactor the code based on the defaults for the language, and I don’t give much thought to it.</p>
+
+<h3 id="best-ide">Best IDE</h3>
+<p>The best IDE/Editor is the one you know how to use. You should learn the ins and outs of your editor.</p>
+
+<p>If you are just starting out, and don’t know which one to chose, play with all of them, and see which one feels best.<br />
+<strong>Do not use an IDE just because it’s hip.</strong>.</p>
+
+<p>Also, the language, sometimes even the framework you use may limit your options. While many editors can provide nice syntax highlighting, you may need a proper IDE (Integrated Development Environment) to write code faster, cleaner, and with fewer problems.</p>
+
+<p>Personally, I like the IDEs provided by <a href="https://www.jetbrains.com/">JetBrains</a>, but if I were on a tighter budget, I would probably go for <a href="https://netbeans.org/">NetBeans</a> or <a href="https://code.visualstudio.com/">VSCode</a> (VSCode is closer to an editor than an IDE, but with 3rd party extensions, it can act almost like an IDE.</p>
+
+    </div>
+
+</div>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Cornel&#39;s Style Guide</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Cornel&#39;s Style Guide</li><li><a class="u-email" href="mailto:cornel@borina.ro">cornel@borina.ro</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/vladutcornel"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">vladutcornel</span></a></li><li><a href="https://www.twitter.com/vladutcornel"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">vladutcornel</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>There&#39;s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

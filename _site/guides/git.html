@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Git guidelines | Cornel’s Style Guide</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Git guidelines" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="There’s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense." />
+<meta property="og:description" content="There’s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense." />
+<link rel="canonical" href="/guides/git.html" />
+<meta property="og:url" content="/guides/git.html" />
+<meta property="og:site_name" content="Cornel’s Style Guide" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Git guidelines" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"/guides/git.html","headline":"Git guidelines","description":"There’s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Cornel's Style Guide" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Cornel&#39;s Style Guide</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">Who dis? (About)</a><a class="page-link" href="/guides/git.html">Git guidelines</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Git guidelines</h1>
+  </header>
+
+  <div class="post-content">
+    <p>There is no competition anymore. Git is now the industry standard for code versioning.</p>
+
+<p>There are some things to consider when using it:</p>
+
+<h3 id="do-not-mix-projects">Do not mix projects</h3>
+<p>As much as possible, one Git repository should hold a single unbreakable project.</p>
+
+<h3 id="have-a-consistent-branching-strategy">Have a consistent branching strategy</h3>
+<p>There are a few different strategies to naming your branches. You have to pick one that makes sense to you, and your team, and stick with it.<br />
+One example is <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Git Flow</a> (note you can use the branching strategy manually without the Git extension, if you want to).</p>
+
+<h3 id="make-as-many-unbreakable-commits">Make as many unbreakable commits</h3>
+<p>A single commit should do a single unbreakable change. If multiple changes were made to a single file, commit line-by-line. Git GUIs like GitKraken or Git-Cola allow you to commit single lines or hunks of changes.</p>
+
+<h3 id="code-should-be-stable-after-each-commit">Code should be stable after each commit</h3>
+<p>If anyone runs the code at the commit, it should work with no bugs</p>
+
+<h3 id="commit-message">Commit message</h3>
+<p>The commit message I suggest is inspired by <a href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format">Angular’s</a>, but with some changes to make it generally more usable</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;type&gt;(&lt;issue&gt;): &lt;short summary&gt;
+  |       |             |
+  |       |              -&gt; Summary in present tense. Not capitalized. No period at the end.
+  |       |
+  |        -&gt; Optional issue number from any tracker you use.
+  |
+   -&gt; Commit Type: wip|build|ci|docs|feat|fix|perf|refactor|test|...
+</code></pre></div></div>
+
+<p>If using GitLab or GitHub built-in issue trackers, the issue number should be prefixed by <code class="language-plaintext highlighter-rouge">#</code> (e.g. <code class="language-plaintext highlighter-rouge">#1234</code>).</p>
+
+<h3 id="push-anything-you-have-at-eod">Push anything you have at EOD</h3>
+<p>At the end of each day, regardless of how far you are with your changes, push anything you have to the cloud/online repository you are working with.<br />
+Use <code class="language-plaintext highlighter-rouge">wip</code> (Work in progress) as the type if the change is not complete.</p>
+
+<p>Why?<br />
+You may lose access to your computer, for various reasons. If you didn’t push your changes, they may be lost.</p>
+
+<h3 id="remove-or-amend-wip-commits">Remove or Amend <code class="language-plaintext highlighter-rouge">wip</code> commits</h3>
+<p>Once changes are complete, remove the “Work in progress” commits, and replace them with proper commits.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Cornel&#39;s Style Guide</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Cornel&#39;s Style Guide</li><li><a class="u-email" href="mailto:cornel@borina.ro">cornel@borina.ro</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/vladutcornel"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">vladutcornel</span></a></li><li><a href="https://www.twitter.com/vladutcornel"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">vladutcornel</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>There&#39;s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
