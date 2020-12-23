@@ -23,7 +23,7 @@ email: cornel@borina.ro
 description: >- # this means to ignore newlines until "baseurl:"
   There's 100 Coding Style guides on The Web, so I am joining them to have 101.
   This one is the result of of my experience, sometimes following other written styles, for as long as they made sense.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/style-guide" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: vladutcornel
 github_username:  vladutcornel
