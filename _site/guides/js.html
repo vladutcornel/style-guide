@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      JavaScript guidelines &middot; Cornel's Style Guide
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/style-guide/public/css/poole.css">
+  <link rel="stylesheet" href="/style-guide/public/css/syntax.css">
+  <link rel="stylesheet" href="/style-guide/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/style-guide">
+          Cornel's Style Guide
+        </a>
+      </h1>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/style-guide/">Home</a>
+
+      
+
+      
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/style-guide/about/">Who dis? (About)</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/style-guide/guides/git.html">Git guidelines</a>
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item active" href="/style-guide/guides/js.html">JavaScript guidelines</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/style-guide/guides/vue.html">Vue guidelines</a>
+          
+        
+      
+        
+      
+        
+      
+    </nav>
+
+    <div class="copyright">&copy; 2021. All rights reserved.</div>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="page">
+  <h1 class="page-title">JavaScript guidelines</h1>
+  <h2 id="do-not-follow-this-guide">Do not follow this guide</h2>
+<p>If you are joining an existing project and team, chances are there are already style guides that your team follows.
+Ask your Team Leader about them. Only if there aren’t any, or you feel comfortable in suggesting changes,
+ask them if they are willing to follow this guide.</p>
+
+<h2 id="do-not-write-javascript">Do not write JavaScript</h2>
+
+<p>The JavaScript that is safe to run in browsers is fairly limited. Even if you plan to only support modern browsers, 
+they don’t always support all the features.</p>
+
+<p>Fortunately, there are tools like <a href="https://babeljs.io/">Babel</a> that transform bleeding edge code to code that most 
+browsers should be able to handle.<br />
+If babel is not already in your project, you should take the time to set it up, 
+maybe using <a href="https://webpack.js.org/">Webpack</a>.</p>
+
+<p>Beyond browsers, JavaScript may be used in other environments (e.g. <a href="https://nodejs.org/">Node.js</a>) 
+which may have fewer restrictions. In this case, it’s up to you and your team to decide if Babel is needed.</p>
+
+<h2 id="use-double-quotes">Use “double quotes”</h2>
+
+<p>As a general programmer, with C and Java background, the fact that 
+JavaScript allows treats ‘single quotes’ and “double quotes” exactly the same is mind-boggling.</p>
+
+<p>Some style guides suggest using single quotes. If you see one, check how old it is. 
+In ancient times, some JavaScript was written directly in HTML attributes, like so:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- BAD CODE --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">onclick=</span><span class="s">"open('sesamy')"</span><span class="nt">&gt;</span>Click me like one of your French girls<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>Back then, it made sense to keep consistency: HTML attributes would use “double quotes”, and JS strings ‘single quotes’.</p>
+
+<p>In modern times, that’s not important, and in fact it’s bad practice having JS inside HTML attributes. 
+I find it more important to keep consistency with other mature programming languages. 
+That’s why I prefer “double quotes”.</p>
+
+<h2 id="const-vs-let-when-constants-are-not-constant"><code class="language-plaintext highlighter-rouge">const</code> vs <code class="language-plaintext highlighter-rouge">let</code> when constants are not constant</h2>
+
+<p>Modern JS replaces the ancient <code class="language-plaintext highlighter-rouge">var</code> for declaring variables with <code class="language-plaintext highlighter-rouge">let</code> and <code class="language-plaintext highlighter-rouge">const</code>. 
+I will assume anyone reading this knows the basics: With <code class="language-plaintext highlighter-rouge">let</code>, you can change the value, with <code class="language-plaintext highlighter-rouge">const</code>, you can’t.</p>
+
+<p>What is less obvious is that properties of objects that are declared with <code class="language-plaintext highlighter-rouge">const</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">OBJ</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">A</span><span class="p">:</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="c1">// This is completely allowed</span>
+<span class="nx">OBJ</span><span class="p">.</span><span class="nx">A</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">ARR</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+
+<span class="c1">// No problem as far as JS designers are concerned</span>
+<span class="nx">ARR</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">potatoes</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>I think <strong>this is a bad design decision, and I refuse to willingly take advantage of it</strong>.</p>
+
+<p><strong>Rule</strong>: If absolutely nothing changes in the object or array, use <code class="language-plaintext highlighter-rouge">const</code>.<br />
+<strong>Rule</strong>: If anything changes in the object or array over the course of the current block, use <code class="language-plaintext highlighter-rouge">let</code>.</p>
+
+<p>Of course, you may find yourself working with people who think Ecma International (the organization that is in charge of JS standards) is made of untouchable gods that can never do anything wrong, just nod and pretend you don’t think they’re religious fanatics.</p>
+
+</div>
+
+    </div>
+
+  </body>
+</html>
