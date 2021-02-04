@@ -4,7 +4,7 @@ layout: home
 
 After 15 years working with different coding and programming languages, and following different coding style guidelines,
 I have developed my own style, that may contradict or complement other guidelines you may have read. 
-[More about me here](/about) 
+[More about me here](about) 
 
 General rules
 =============
@@ -55,7 +55,7 @@ Instead of writing a comment before each line (which qualifies as too much infor
 -----------
 There is no competition anymore. Git is now the industry standard for code versioning. 
 
-Look at [Cornel's Git Style Guide](/guides/git).
+Look at [Cornel's Git Style Guide](guides/git).
 
 6\. Common debates
 ------------------
