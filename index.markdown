@@ -36,7 +36,7 @@ Any line longer than 120 characters should definitely be broken.
 
 3\. General programming
 -----------------------
-Try to avoid constructs that are specific to other languages, unless there is a very good reason to do it.
+Try to avoid constructs that are specific to the language you are coding in, unless there is a very good reason to do it.
 
 4\. Code Comments
 -----------------
