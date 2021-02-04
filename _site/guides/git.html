@@ -9,13 +9,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="There’s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense." />
 <meta property="og:description" content="There’s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense." />
-<link rel="canonical" href="/style-guide/guides/git.html" />
-<meta property="og:url" content="/style-guide/guides/git.html" />
+<link rel="canonical" href="http://localhost:4000/style-guide/guides/git.html" />
+<meta property="og:url" content="http://localhost:4000/style-guide/guides/git.html" />
 <meta property="og:site_name" content="Cornel’s Style Guide" />
 <script type="application/ld+json">
-{"url":"/style-guide/guides/git.html","@type":"WebPage","headline":"Git guidelines","description":"There’s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense.","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"Git guidelines","url":"http://localhost:4000/style-guide/guides/git.html","description":"There’s 100 Coding Style guides on The Web, so I am joining them to have 101. This one is the result of of my experience, sometimes following other written styles, for as long as they made sense.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/style-guide/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/style-guide/feed.xml" title="Cornel's Style Guide" /></head>
+<link rel="stylesheet" href="/style-guide/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/style-guide/feed.xml" title="Cornel's Style Guide" /></head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/style-guide/">Cornel&#39;s Style Guide</a><nav class="site-nav">
@@ -28,7 +28,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/style-guide/about/">Who dis? (About)</a><a class="page-link" href="/style-guide/guides/git.html">Git guidelines</a></div>
+        <div class="trigger"><a class="page-link" href="/style-guide/about/">Who dis? (About)</a><a class="page-link" href="/style-guide/guides/git.html">Git guidelines</a><a class="page-link" href="/style-guide/guides/vue.html">Vue guidelines</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -44,20 +44,25 @@
 
 <p>There are some things to consider when using it:</p>
 
-<h3 id="do-not-mix-projects">Do not mix projects</h3>
+<h2 id="do-not-follow-this-guide">Do not follow this guide</h2>
+<p>If you are joining an existing project and team, chances are there are already style guides that your team follows.
+Ask your Team Leader about them. Only if there aren’t any, or you feel comfortable in suggesting changes,
+ask them if they are willing to follow this guide.</p>
+
+<h2 id="do-not-mix-projects">Do not mix projects</h2>
 <p>As much as possible, one Git repository should hold a single unbreakable project.</p>
 
-<h3 id="have-a-consistent-branching-strategy">Have a consistent branching strategy</h3>
+<h2 id="have-a-consistent-branching-strategy">Have a consistent branching strategy</h2>
 <p>There are a few different strategies to naming your branches. You have to pick one that makes sense to you, and your team, and stick with it.<br />
 One example is <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Git Flow</a> (note you can use the branching strategy manually without the Git extension, if you want to).</p>
 
-<h3 id="make-as-many-unbreakable-commits">Make as many unbreakable commits</h3>
+<h2 id="make-as-many-unbreakable-commits">Make as many unbreakable commits</h2>
 <p>A single commit should do a single unbreakable change. If multiple changes were made to a single file, commit line-by-line. Git GUIs like GitKraken or Git-Cola allow you to commit single lines or hunks of changes.</p>
 
-<h3 id="code-should-be-stable-after-each-commit">Code should be stable after each commit</h3>
+<h2 id="code-should-be-stable-after-each-commit">Code should be stable after each commit</h2>
 <p>If anyone runs the code at the commit, it should work with no bugs</p>
 
-<h3 id="commit-message">Commit message</h3>
+<h2 id="commit-message">Commit message</h2>
 <p>The commit message I suggest is inspired by <a href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format">Angular’s</a>, but with some changes to make it generally more usable</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;type&gt;(&lt;issue&gt;): &lt;short summary&gt;
@@ -69,16 +74,16 @@ One example is <a href="https://www.atlassian.com/git/tutorials/comparing-workfl
    -&gt; Commit Type: wip|build|ci|docs|feat|fix|perf|refactor|test|...
 </code></pre></div></div>
 
-<p>If using GitLab or GitHub built-in issue trackers, the issue number should be prefixed by <code class="language-plaintext highlighter-rouge">#</code> (e.g. <code class="language-plaintext highlighter-rouge">#1234</code>).</p>
+<p>If using GitLab or GitHub built-in issue trackers, the issue number should be prefixed by <code class="language-plaintext highlighter-rouge">#</code> (e.g. <code class="language-plaintext highlighter-rouge">#1234</code>). For other issue trackers, such as Jira, use the naming convention from there (e.g. in Jira: <code class="language-plaintext highlighter-rouge">ABC-1234</code>).</p>
 
-<h3 id="push-anything-you-have-at-eod">Push anything you have at EOD</h3>
+<h2 id="push-anything-you-have-at-eod">Push anything you have at EOD</h2>
 <p>At the end of each day, regardless of how far you are with your changes, push anything you have to the cloud/online repository you are working with.<br />
 Use <code class="language-plaintext highlighter-rouge">wip</code> (Work in progress) as the type if the change is not complete.</p>
 
 <p>Why?<br />
 You may lose access to your computer, for various reasons. If you didn’t push your changes, they may be lost.</p>
 
-<h3 id="remove-or-amend-wip-commits">Remove or Amend <code class="language-plaintext highlighter-rouge">wip</code> commits</h3>
+<h2 id="remove-or-amend-wip-commits">Remove or Amend <code class="language-plaintext highlighter-rouge">wip</code> commits</h2>
 <p>Once changes are complete, remove the “Work in progress” commits, and replace them with proper commits.</p>
 
   </div>
