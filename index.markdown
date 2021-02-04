@@ -28,6 +28,11 @@ Give that someone else as few reasons to cuss you as possible.
 
 The fact you are reading a style guide is a step in the right direction.
 
+### Code vertically
+
+Your code should span as much as possible vertically (i.e. up-down).  
+You should consider breaking any line longer than 80 characters.  
+Any line longer than 120 characters should definitely be broken.
 
 3\. General programming
 -----------------------
